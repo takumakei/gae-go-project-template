@@ -50,9 +50,9 @@ $ go test -v ./src/...
 ```
 $ make
     help: show this message
-     run: run local dev server
+     run: dev_appserver.py
     test: go test
-    lint: lint
+    lint: golint
   deploy: deploy --no-promote
  promote: deploy --promote
    glide: glide update

@@ -6,7 +6,7 @@ help: ## show this message
 	@grep -E '^[a-zA-Z0-9_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%8s\033[0m: %s\n", $$1, $$2}'
 
 .PHONY: run
-run: ## run local dev server
+run: ## dev_appserver.py
 	bin/run.sh
 
 .PHONY: test
@@ -14,7 +14,7 @@ test: ## go test
 	bin/test.sh
 
 .PHONY: lint
-lint: ## lint
+lint: ## golint
 	bin/lint.sh
 
 .PHONY: deploy
