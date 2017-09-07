@@ -13,6 +13,10 @@ run: ## run local dev server
 test: ## go test
 	bin/test.sh
 
+.PHONY: lint
+lint: ## lint
+	bin/lint.sh
+
 .PHONY: deploy
 deploy: ## deploy --no-promote
 	bin/deploy.sh --no-promote

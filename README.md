@@ -21,6 +21,7 @@ $ make glide  # 'glide up' packages that are under control of glide
 ```
 $ make run     # 'dev_appserver.py ...'
 $ make test    # 'go test ...'
+$ make lint    # 'golint ...'
 ```
 
 ### Deployment
@@ -51,6 +52,7 @@ $ make
     help: show this message
      run: run local dev server
     test: go test
+    lint: lint
   deploy: deploy --no-promote
  promote: deploy --promote
    glide: glide update
