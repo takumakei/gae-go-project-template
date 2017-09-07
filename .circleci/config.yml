@@ -1,0 +1,13 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: takumakei/google-app-engine-go:170.0.0
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run: bin/go-get.sh
+      - run: bin/glide-update.sh
+      - run: bin/test.sh
+      - run: bin/lint.sh
+      - run: go vet ./src/...

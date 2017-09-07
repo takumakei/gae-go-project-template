@@ -1,6 +1,8 @@
 GAE/Go Project Template
 ======================================================================
 
+[![CircleCI](https://circleci.com/gh/takumakei/gae-go-project-template.svg?style=svg)](https://circleci.com/gh/takumakei/gae-go-project-template)
+
 ## Requirements
 
 * Google Cloud SDK
