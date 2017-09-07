@@ -17,6 +17,10 @@ test: ## go test
 lint: ## golint
 	bin/lint.sh
 
+.PHONY: vet
+vet: ## go vet
+	bin/env.sh go vet ./src/...
+
 .PHONY: deploy
 deploy: ## deploy --no-promote
 	bin/deploy.sh --no-promote

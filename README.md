@@ -53,6 +53,7 @@ $ make
      run: dev_appserver.py
     test: go test
     lint: golint
+     vet: go vet
   deploy: deploy --no-promote
  promote: deploy --promote
    glide: glide update
