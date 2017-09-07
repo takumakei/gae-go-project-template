@@ -1,0 +1,32 @@
+runtime: go
+api_version: go1.8
+
+threadsafe: true
+
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: 1
+  min_pending_latency: 3000ms
+  max_pending_latency: automatic
+
+skip_files:
+- ^(.*/)?#.*#$
+- ^(.*/)?.*~$
+- ^(.*/)?.*\.py[co]$
+- ^(.*/)?.*/RCS/.*$
+- ^(.*/)?\..*$
+- ^(.*/)?.gitignore$
+- ^(.*/)?\.DS_Store$
+
+handlers:
+- url: /(.*\.(ico|gif|png|jpg))$
+  static_files: static/\1
+  upload: static/.*\.(ico|gif|png|jpg)$
+
+- url: /(index.html)?$
+  static_files: static/index.html
+  upload: static/index.html$
+
+- url: /.*
+  script: _go_app
+
