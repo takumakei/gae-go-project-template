@@ -16,8 +16,8 @@ func TestSample1(t *testing.T) {
 	}
 	defer inst.Close()
 
-	userJson := `{"username": "dennis", "balance": 200}`
-	reader := strings.NewReader(userJson)
+	userJSON := `{"username": "dennis", "balance": 200}`
+	reader := strings.NewReader(userJSON)
 	req, err := inst.NewRequest("GET", "/hi", reader)
 	if err != nil {
 		t.Fatalf("Failed to create req1: %v", err)
@@ -28,7 +28,7 @@ func TestSample1(t *testing.T) {
 	ctx := appengine.NewContext(req)
 
 	w := httptest.NewRecorder()
-	RequestHandler(w, req, ctx)
+	RequestHandler(ctx, w, req)
 	if str := w.Body.String(); str != "200" {
 		t.Fatalf("Error")
 	}
