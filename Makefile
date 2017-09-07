@@ -21,6 +21,11 @@ lint: ## golint
 vet: ## go vet
 	bin/env.sh go vet ./src/...
 
+.PHONY: fmt
+fmt: ## go fmt with goimports
+	bin/env.sh goimports -l ./src/
+	bin/env.sh go fmt ./src/...
+
 .PHONY: deploy
 deploy: ## deploy --no-promote
 	bin/deploy.sh --no-promote

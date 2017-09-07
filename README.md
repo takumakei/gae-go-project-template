@@ -54,6 +54,7 @@ $ make
     test: go test
     lint: golint
      vet: go vet
+     fmt: go fmt with goimports
   deploy: deploy --no-promote
  promote: deploy --promote
    glide: glide update
