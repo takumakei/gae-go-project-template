@@ -27,7 +27,7 @@ $ make lint    # 'golint ...'
 ### Deployment
 
 ```
-$ export PROJECT_ID="..."
+$ export GOOGLE_PROJECT_ID="..."
 $ make deploy  # 'gcloud app deploy --no-promote ...'
 $ make promote # 'gcloud app deploy --promote ...'
 ```

@@ -5,8 +5,8 @@ SERVICES=(app/default/app.yaml)
 eval "$("$(dirname "$0")/env.sh")"
 eval "source \"$(dirname "$0")/common.sh\""
 
-if [[ "x${PROJECT_ID:-}" == "x" ]]; then
-  err "PROJECT_ID (environment variable) needed"
+if [[ "x${GOOGLE_PROJECT_ID:-}" == "x" ]]; then
+  err "GOOGLE_PROJECT_ID (environment variable) needed"
 fi
 
 PROMOTE="--no-promote"
@@ -25,4 +25,4 @@ done
 VERSION="$(TZ=Asia/Tokyo date +%Y%m%d-%H%M%S)-$(git rev-parse --short HEAD)"
 
 cd "$PROJECT_ROOT"
-run gcloud app deploy "$PROMOTE" --project "$PROJECT_ID" --version "$VERSION" "${SERVICES[@]}"
+run gcloud app deploy "$PROMOTE" --project "$GOOGLE_PROJECT_ID" --version "$VERSION" "${SERVICES[@]}"
