@@ -28,7 +28,7 @@ func TestSample1(t *testing.T) {
 	ctx := appengine.NewContext(req)
 
 	w := httptest.NewRecorder()
-	RequestHandler(w, req, ctx)
+	RequestHandler(ctx, w, req)
 	if str := w.Body.String(); str != "200" {
 		t.Fatalf("Error")
 	}

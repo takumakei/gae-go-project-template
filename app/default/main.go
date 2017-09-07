@@ -13,5 +13,5 @@ func init() {
 
 func handler(w http.ResponseWriter, r *http.Request) {
 	ctx := appengine.NewContext(r)
-	helloworld.RequestHandler(w, r, ctx)
+	helloworld.RequestHandler(ctx, w, r)
 }
