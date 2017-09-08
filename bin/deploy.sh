@@ -24,5 +24,5 @@ done
 
 VERSION="$(date +%Y%m%d-%H%M%S)-$(git rev-parse --short HEAD)"
 
-cd "$PROJECT_ROOT"
+cd "$PROJECT_ROOT" && \
 run gcloud app deploy "$PROMOTE" --project "$GOOGLE_PROJECT_ID" --version "$VERSION" "${SERVICES[@]}"

@@ -4,7 +4,7 @@ set -eu
 
 run() {
   echo -e "\e[1m==> $*\e[0m"
-  "$@"
+  eval "$@"
 }
 
 err() {

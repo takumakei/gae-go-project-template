@@ -6,5 +6,4 @@ eval "source \"$(dirname "$0")/common.sh\""
 unset GOROOT
 
 cd "$PROJECT_ROOT" && \
-run go vet ./app/... && \
-run go vet ./src/...
+run go vet ./app/... ./src/...
