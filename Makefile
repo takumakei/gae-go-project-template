@@ -23,8 +23,7 @@ vet: ## go vet
 
 .PHONY: fmt
 fmt: ## go fmt with goimports
-	bin/env.sh goimports -l ./src/
-	bin/env.sh go fmt ./src/...
+	bin/go-fmt.sh
 
 .PHONY: deploy
 deploy: ## deploy --no-promote
