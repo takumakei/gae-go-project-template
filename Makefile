@@ -19,7 +19,7 @@ lint: ## golint
 
 .PHONY: vet
 vet: ## go vet
-	bin/env.sh go vet ./src/...
+	bin/go-vet.sh
 
 .PHONY: fmt
 fmt: ## go fmt with goimports
