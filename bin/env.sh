@@ -17,16 +17,16 @@ print_env() {
     err "dev_appserver.py not found. Google Cloud SDK missing ?" >&2
   fi
 
-  PROJECT_ROOT="$(dirname "$(realpath "$(dirname "$0")")")"
+  PROJECT_ROOT="$(dirname "$(dirname "$(realpath "$0")")")"
   echo "export PROJECT_ROOT=\"$PROJECT_ROOT\""
 
   GOPATH="${PROJECT_ROOT}/.go:${PROJECT_ROOT}/.src:${PROJECT_ROOT}/.vendor"
   echo "export GOPATH=\"$GOPATH\""
 
-  GOROOT="$(dirname "$(realpath "$(dirname "$dev_appserver_py")")")/platform/google_appengine/goroot-1.8"
+  GOROOT="$(dirname "$(dirname "$(realpath "$dev_appserver_py")")")/platform/google_appengine/goroot-1.8"
   echo "export GOROOT=\"$GOROOT\""
 
-  PATH="${PROJECT_ROOT}/bin:${PROJECT_ROOT}/.go/bin:$PATH"
+  PATH="${PROJECT_ROOT}/bin:${PROJECT_ROOT}/.go/bin:${GOROOT}/bin:\$PATH"
   echo "export PATH=\"$PATH\""
 }
 
