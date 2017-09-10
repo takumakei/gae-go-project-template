@@ -10,4 +10,4 @@ jobs:
       - run: bin/glide-update.sh
       - run: bin/test.sh
       - run: bin/lint.sh
-      - run: go vet ./src/...
+      - run: bin/go-vet.sh
