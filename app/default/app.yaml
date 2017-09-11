@@ -23,7 +23,7 @@ handlers:
   static_files: static/\1
   upload: static/.*\.(ico|gif|png|jpg)$
 
-- url: /(index.html)?$
+- url: /(index\.html)?$
   static_files: static/index.html
   upload: static/index.html$
 
