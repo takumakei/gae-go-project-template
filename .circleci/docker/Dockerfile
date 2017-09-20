@@ -1,5 +1,5 @@
 FROM golang:1.8.3-alpine3.6
-ENV CLOUD_SDK_VERSION 170.0.0
+ENV CLOUD_SDK_VERSION 172.0.0
 
 ENV PATH /google-cloud-sdk/bin:$PATH
 
@@ -16,9 +16,8 @@ RUN apk update && \
         gcc \
         libc-dev \
         libc6-compat \
-        make \
-        && \
-    curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
+        make
+RUN curl -O https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
     tar xzf google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
     rm google-cloud-sdk-${CLOUD_SDK_VERSION}-linux-x86_64.tar.gz && \
     ln -s /lib /lib64 && \

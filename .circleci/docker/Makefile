@@ -1,6 +1,6 @@
 .DEFAULT_GOAL := help
 
-IMAGE_NAME=takumakei/google-app-engine-go:170.0.0
+IMAGE_NAME=takumakei/google-app-engine-go:172.0.0
 
 MKFILE_PATH:=$(abspath $(lastword $(MAKEFILE_LIST)))
 PROJECT_DIR=$(abspath $(dir $(MKFILE_PATH))/../..)
