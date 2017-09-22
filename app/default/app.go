@@ -1,4 +1,4 @@
-package helloworld
+package app
 
 import (
 	"helloworld"
