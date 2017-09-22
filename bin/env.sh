@@ -20,7 +20,7 @@ print_env() {
   PROJECT_ROOT="$(dirname "$(dirname "$(realpath "$0")")")"
   echo "export PROJECT_ROOT=\"$PROJECT_ROOT\""
 
-  GOPATH="${PROJECT_ROOT}/.go:${PROJECT_ROOT}/.src:${PROJECT_ROOT}/.vendor"
+  GOPATH="${PROJECT_ROOT}/.go:${PROJECT_ROOT}:${PROJECT_ROOT}/.vendor"
   echo "export GOPATH=\"$GOPATH\""
 
   GOROOT="$(dirname "$(dirname "$(realpath "$dev_appserver_py")")")/platform/google_appengine/goroot-1.8"
