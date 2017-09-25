@@ -4,7 +4,7 @@ set -eu
 
 run() {
   printf "\e[1m==> %s\e[0m\n" "$*"
-  eval "$@"
+  eval -- "$@"
 }
 
 err() {

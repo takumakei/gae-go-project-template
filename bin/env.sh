@@ -7,7 +7,7 @@ main() {
     print_env
   else
     eval "$(print_env)"
-    eval "$@"
+    eval -- "$@"
   fi
 }
 
