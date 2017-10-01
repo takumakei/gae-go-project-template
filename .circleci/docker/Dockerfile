@@ -1,5 +1,5 @@
 FROM golang:1.8.3-alpine3.6
-ENV CLOUD_SDK_VERSION 172.0.1
+ENV CLOUD_SDK_VERSION 173.0.0
 
 ENV PATH /google-cloud-sdk/bin:$PATH
 

@@ -2,7 +2,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: takumakei/google-app-engine-go:172.0.1
+      - image: takumakei/google-app-engine-go:173.0.0
     working_directory: ~/repo
     steps:
       - checkout
